@@ -9,6 +9,14 @@ class HomepageTest < CapybaraTestCase
     assert_equal 200, page.status_code
   end
 
+  def test_user_can_see_the_about_page
+    visit '/about'
+
+    assert_equal 200, page.status_code
+    assert page.has_content?("About Me!")
+    assert page.has_content?("Here's some stuff to know.")
+  end
+
   def test_error_when_attempting_to_visit_nonexistant_page
     visit '/llamas'
 
