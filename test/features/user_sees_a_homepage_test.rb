@@ -13,6 +13,6 @@ class HomepageTest < CapybaraTestCase
     visit '/llamas'
 
     assert_equal 404, page.status_code
-    assert page.has_content?("doesn't exist")
+    assert page.has_content?("Page not found.")
   end
 end
